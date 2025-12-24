@@ -1,0 +1,3 @@
+export default function AtsJobs() {
+  return <h1 className="text-xl font-semibold">ATS Jobs</h1>;
+}

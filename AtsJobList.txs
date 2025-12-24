@@ -1,0 +1,38 @@
+interface Job {
+  id: string;
+  title: string;
+  status?: string;
+}
+
+export default function AtsJobList({ jobs = [] }: { jobs?: Job[] }) {
+  if (!jobs.length) {
+    return (
+      <div className="text-gray-500">
+        No jobs created yet.
+      </div>
+    );
+  }
+
+  return (
+    <div className="space-y-3">
+      {jobs.map((job) => (
+        <div
+          key={job.id}
+          className="bg-white border rounded p-4"
+        >
+          <h3 className="font-medium">
+            {job.title}
+          </h3>
+          <p className="text-sm text-gray-500">
+            Job ID: {job.id}
+          </p>
+          {job.status && (
+            <p className="text-xs text-blue-600 mt-1">
+              Status: {job.status}
+            </p>
+          )}
+        </div>
+      ))}
+    </div>
+  );
+}

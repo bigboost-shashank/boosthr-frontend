@@ -1,0 +1,12 @@
+export default function AtsJobHeader() {
+  return (
+    <div className="mb-4">
+      <h1 className="text-2xl font-semibold">
+        Applicant Tracking System
+      </h1>
+      <p className="text-gray-500 text-sm">
+        Manage jobs, candidates, and hiring stages.
+      </p>
+    </div>
+  );
+}

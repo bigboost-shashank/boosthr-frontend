@@ -1,0 +1,31 @@
+import { useRouter } from "next/router";
+
+export default function JobDetail() {
+  const router = useRouter();
+  const { id } = router.query;
+
+  if (!id) {
+    return <div className="text-gray-500">Loading job details...</div>;
+  }
+
+  return (
+    <div>
+      <h1 className="text-2xl font-semibold mb-4">
+        Job Details
+      </h1>
+
+      <div className="bg-white p-4 rounded border">
+        <p className="text-sm text-gray-600 mb-2">
+          Job ID:
+        </p>
+        <p className="font-mono text-blue-600">
+          {id}
+        </p>
+
+        <div className="mt-6 text-gray-500">
+          Job description, candidates, and status will appear here.
+        </div>
+      </div>
+    </div>
+  );
+}
